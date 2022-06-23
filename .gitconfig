@@ -1,0 +1,12 @@
+[user]
+	name = Michel LAO
+	email = SansNom01@protonmail.com
+	signingkey = E0C0E965684AA7DA
+[commit]
+	gpgsign = true
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+[http]
+	sslVerify = false
