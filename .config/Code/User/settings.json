@@ -1,0 +1,22 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "telemetry.telemetryLevel": "off",
+    "editor.fontFamily": "'FreeMono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "workbench.enableExperiments": false,
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
+    "extensions.ignoreRecommendations": true,
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c17",
+    "C_Cpp.default.compilerPath": "/usr/bin/g++",
+    "editor.bracketPairColorization.enabled": true,
+    "workbench.colorCustomizations": {
+        "editorBracketHighlight.foreground1": "#f1c32c",
+        "editorBracketHighlight.foreground2": "#ff8b5dce",
+        "editorBracketHighlight.foreground3": "#2be42b",
+        "editorBracketHighlight.foreground4": "#7b7a81",
+        "editorBracketHighlight.foreground5": "#784af7",
+        "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000"
+    },
+    "update.mode": "none",
+    "cmake.configureOnOpen": false
+}
