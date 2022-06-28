@@ -127,10 +127,6 @@ rehash_precmd() {
 
 add-zsh-hook -Uz precmd rehash_precmd
 
-if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
-	exec startx
-fi
-
 # if tmux is executable, X is running, and not inside a tmux session, then try to attach
 if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ]; then
 		tmux attach || tmux > /dev/null 2>&1
