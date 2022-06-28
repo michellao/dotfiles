@@ -51,6 +51,7 @@ zstyle ':completion:*' menu select
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+[[ "$TERM" == "xterm-kitty" ]] && alias ssh="kitty +kitten ssh"
 alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 export GPG_TTY=$(tty)
