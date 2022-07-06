@@ -8,7 +8,6 @@
 #
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
-set $Alt Mod1
 
 # Home row direction keys, like vim
 set $left h
@@ -16,20 +15,19 @@ set $down j
 set $up k
 set $right l
 # Your preferred terminal emulator
-set $term xfce4-terminal
+set $term kitty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-#set $menu --no-startup-id rofi -show drun -run-shell-command '{terminal} -e zsh -ic "{cmd} && read"'
-set $menu --no-startup-id wofi --show=drun
+#set $menu --no-startup-id wofi --show=drun
 
 xwayland disable
 
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /usr/share/backgrounds/gnome/blobs-l.svg fill
+#output * bg /usr/share/backgrounds/gnome/blobs-l.svg fill
 #
 # Example configuration:
 #
@@ -64,7 +62,7 @@ output * bg /usr/share/backgrounds/gnome/blobs-l.svg fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-input * {
+input "type:keyboard" {
 	xkb_layout fr
 }
 
@@ -87,7 +85,7 @@ input type:touchpad {
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec $menu
+    bindsym $mod+d exec wofi --show drun
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -139,11 +137,6 @@ input type:touchpad {
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
-
-    # Rofi
-	bindsym $mod+m exec --no-startup-id ~/.config/rofi/bin/applet_volume
-	bindsym $mod+n exec --no-startup-id ~/.config/rofi/bin/menu_network
-	bindsym $mod+p exec --no-startup-id ~/.config/rofi/bin/menu_powermenu
 
 #
 # Workspaces:
@@ -205,11 +198,11 @@ input type:touchpad {
     # You can send windows there and get them back later.
 
     # Move the currently focused window to the scratchpad
-    #bindsym $mod+Shift+minus move scratchpad
+    bindsym $mod+alt+p move scratchpad
 
     # Show the next scratchpad window or hide the focused scratchpad window.
     # If there are multiple scratchpad windows, this command cycles through them.
-    #bindsym $mod+minus scratchpad show
+    bindsym $mod+p scratchpad show
 #
 # Resizing containers:
 #
@@ -240,7 +233,7 @@ bindsym $mod+r mode "resize"
 #
 # Read `man 5 sway-bar` for more information about this section.
 bar swaybar_command waybar
-
+exec sworkstyle &> /tmp/sworkstyle.log
 #bar {
 #    position top
 #
