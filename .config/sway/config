@@ -22,7 +22,7 @@ set $term kitty
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #set $menu --no-startup-id wofi --show=drun
 
-xwayland disable
+#xwayland disable
 
 ### Output configuration
 #
@@ -247,5 +247,13 @@ exec sworkstyle &> /tmp/sworkstyle.log
 #        inactive_workspace #32323200 #32323200 #5c5c5c
 #    }
 #}
+
+#
+# Position window:
+#
+for_window [class="discord"] floating enable
+for_window [app_id="kitty"] floating enable
+for_window [app_id="org.keepassxc.KeePassXC"] floating enable
+for_window [class="parsecd"] floating enable
 
 include /etc/sway/config.d/*
