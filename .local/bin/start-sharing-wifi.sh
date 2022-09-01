@@ -28,7 +28,7 @@ function verifyPID() {
 isRoot
 
 echo "Accept forward packet"
-nft chain inet filter forward '{ policy accept ; }';
+#nft chain inet filter forward '{ policy accept ; }';
 verifyPID
 
 exit 0
