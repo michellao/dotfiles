@@ -56,6 +56,10 @@ alias config='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 export GPG_TTY=$(tty)
 
+typeset -U path PATH
+path=(~/.local/bin ~/.cargo/bin $path)
+export PATH
+
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -g -A key
