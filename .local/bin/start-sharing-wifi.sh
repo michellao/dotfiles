@@ -7,9 +7,20 @@ function isRoot() {
 	fi
 }
 
+function nftRule() {
+	echo "Nftables update"
+	nft add rule inet filter input udp dport { 5353, 67 } accept
+	nft add rule inet filter forward iif "enp3s0f4u1" ip daddr 192.168.12.0/24 accept
+	nft add rule inet filter forward iif "ap0" ip saddr 192.168.12.0/24 accept
+	touch /tmp/nftRule
+}
+
 function createAP {
 	create_ap --config /etc/create_ap.conf
-	sleep 5
+	sleep 3
+	if [ ! -e /tmp/nftRule ]; then
+		nftRule
+	fi
 	create_ap_PID=$(ls /tmp | grep -E "create_ap.[0-9]+.lock" | cut -d . -f 2)
 	echo "Create Wi-Fi ${create_ap_PID}"
 }
@@ -26,9 +37,6 @@ function verifyPID() {
 
 
 isRoot
-
-echo "Accept forward packet"
-#nft chain inet filter forward '{ policy accept ; }';
 verifyPID
 
 exit 0
