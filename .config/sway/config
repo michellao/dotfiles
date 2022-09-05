@@ -9,6 +9,9 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
+# Path script
+set $p /home/nanashi/.config/wofi
+
 # Home row direction keys, like vim
 set $left h
 set $down j
@@ -16,6 +19,8 @@ set $up k
 set $right l
 # Your preferred terminal emulator
 set $term kitty
+# Your preferred browser
+set $browser firefox
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -228,6 +233,10 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Alt-Tab
+bindsym $mod+Tab exec $p/sway-select-window
+
+
 #
 # Status Bar:
 #
@@ -255,5 +264,8 @@ for_window [class="discord"] floating enable
 for_window [app_id="kitty"] floating enable
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable
 for_window [class="parsecd"] floating enable
+for_window [app_id="qemu"] move window to workspace 6
+for_window [app_id="galculator"] floating enable
+
 
 include /etc/sway/config.d/*
