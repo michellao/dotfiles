@@ -8,5 +8,3 @@
 	defaultBranch = main
 [core]
 	autocrlf = input
-[http]
-	sslVerify = false
