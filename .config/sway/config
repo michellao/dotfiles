@@ -236,6 +236,10 @@ bindsym $mod+r mode "resize"
 # Alt-Tab
 bindsym $mod+Tab exec $p/sway-select-window
 
+# Screenshot
+bindsym Print exec grim -c ~/Pictures
+# Selection screenshot
+bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
 #
 # Status Bar:
@@ -264,7 +268,7 @@ for_window [class="discord"] floating enable
 for_window [app_id="kitty"] floating enable
 for_window [app_id="org.keepassxc.KeePassXC"] floating enable
 for_window [class="parsecd"] floating enable
-for_window [app_id="qemu"] move window to workspace 6
+for_window [app_id="qemu"] move window to workspace number 6
 for_window [app_id="galculator"] floating enable
 
 
