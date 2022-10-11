@@ -1,5 +1,4 @@
 {
-    "workbench.colorTheme": "Default Dark+",
     "telemetry.telemetryLevel": "off",
     "editor.fontFamily": "'FreeMono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "workbench.enableExperiments": false,
@@ -17,7 +16,7 @@
         "editorBracketHighlight.foreground5": "#784af7",
         "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000"*/
         "editorBracketHighlight.foreground1": "#52B2F7",
-        "editorBracketHighlight.foreground2": "#5E10E0",
+        "editorBracketHighlight.foreground2": "#fe20dd",
         "editorBracketHighlight.foreground3": "#FF297A",
         "editorBracketHighlight.foreground4": "#3FE086",
         "editorBracketHighlight.foreground5": "#C3F846",
