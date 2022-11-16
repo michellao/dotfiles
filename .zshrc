@@ -36,6 +36,7 @@ fi
 
 
 PROMPT='%F{green}%n%f@%F{red}%M%f %B%F{blue}%~%f%b %F{yellow}${vcs_info_msg_0_}%f %# '
+RPROMPT='[%F{#0000ff}%?%f]'
 
 # git info
 zstyle ':vcs_info:*' check-for-changes true
@@ -134,6 +135,6 @@ if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 fi
 
 # if tmux is executable, X is running, and not inside a tmux session, then try to attach
-if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ]; then
+if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ] && [[ "${TERM}" == "xterm-kitty" ]]; then
 		tmux attach || tmux > /dev/null 2>&1
 fi
