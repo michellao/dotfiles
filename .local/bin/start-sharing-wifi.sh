@@ -17,11 +17,6 @@ function nftRule() {
 		[Yy])
 			nft add rule inet filter forward iif "wg0" ip daddr 192.168.12.0/24 accept
 			;;
-		[Nn])
-			;;
-		*)
-			askInputNet
-			;;
 	esac
 	touch /tmp/nftRule
 }
