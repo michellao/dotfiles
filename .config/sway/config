@@ -93,7 +93,7 @@ input type:touchpad {
     bindsym $mod+Shift+q kill
 
     # Start your launcher
-    bindsym $mod+d exec wofi --show drun
+    bindsym $mod+d exec --no-startup-id wofi
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -250,19 +250,6 @@ bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 # Read `man 5 sway-bar` for more information about this section.
 bar swaybar_command waybar
 exec sworkstyle &> /tmp/sworkstyle.log
-#bar {
-#    position top
-#
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-#    status_command while date +'%Y-%m-%d %H:%M:%S %p'; do sleep 1; done
-
-#    colors {
-#        statusline #ffffff
-#        background #323232
-#        inactive_workspace #32323200 #32323200 #5c5c5c
-#    }
-#}
 
 #
 # Position window:
