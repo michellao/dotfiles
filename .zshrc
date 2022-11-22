@@ -21,7 +21,6 @@ precmd_functions+=( precmd_vcs_info )
 function xterm_title_precmd () {
 	print -Pn '\e]2;%n@%M %~\a'
 	[[ "$TERM" == 'screen'* ]] && print -Pn -- '\e_\005{g}%n\005{-}@\005{m}%m\005{-} \005{B}%~\005{-}\e\\'
-
 }
 
 function xterm_title_preexec () {
@@ -131,10 +130,10 @@ rehash_precmd() {
 add-zsh-hook -Uz precmd rehash_precmd
 
 if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-		exec sway
+	exec sway
 fi
 
 # if tmux is executable, X is running, and not inside a tmux session, then try to attach
 if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ] && [[ "${TERM}" == "xterm-kitty" ]]; then
-		tmux attach || tmux > /dev/null 2>&1
+	tmux attach || tmux > /dev/null 2>&1
 fi
