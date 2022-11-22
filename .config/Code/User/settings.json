@@ -23,5 +23,6 @@
         "editorBracketHighlight.unexpectedBracket.foreground": "#e700ef"
     },
     "update.mode": "none",
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "liveServer.settings.donotShowInfoMsg": true
 }
