@@ -20,7 +20,7 @@
         "editorBracketHighlight.foreground3": "#FF297A",
         "editorBracketHighlight.foreground4": "#3FE086",
         "editorBracketHighlight.foreground5": "#C3F846",
-        "editorBracketHighlight.unexpectedBracket.foreground": "#e700ef"
+        "editorBracketHighlight.unexpectedBracket.foreground": "#8256ef"
     },
     "update.mode": "none",
     "cmake.configureOnOpen": false,
