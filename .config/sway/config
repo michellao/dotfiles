@@ -240,7 +240,7 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Tab exec $p/sway-select-window
 
 # Screenshot
-bindsym Print exec grim -c ~/Pictures
+bindsym Print exec grim ~/Pictures
 # Selection screenshot
 bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
@@ -262,5 +262,6 @@ for_window [app_id="spicy"] move window to workspace number 6
 for_window [app_id="galculator"] floating enable
 for_window [class="jetbrains-idea-ce"] floating enable
 for_window [title="About Mozilla Firefox"] floating enable
+for_window [title="Open Folder"] floating enable
 
 include /etc/sway/config.d/*

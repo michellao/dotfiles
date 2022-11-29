@@ -54,7 +54,7 @@
   border-left: none;
 }
 
-#mode, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #idle_inhibitor, #backlight, #mpd, #clock, #temperature {
+#mode, #battery, #cpu, #disk, #memory, #network, #pulseaudio, #wireplumber, #idle_inhibitor, #backlight, #mpd, #clock, #temperature {
   margin: 4px 2px;
   padding: 0 6px;
   border-radius: 20px;

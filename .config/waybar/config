@@ -138,6 +138,10 @@
         },
         //"on-click": "pavucontrol"
     },
+	"wireplumber": {
+		"format": "{volume}% {icon}",
+		"format-muted": ""
+	},
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
