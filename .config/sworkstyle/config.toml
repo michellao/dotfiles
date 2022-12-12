@@ -5,6 +5,7 @@ fallback = ''
 [matching]
 'discord' = ''
 '/Discord/' = ''
+'/WebCord/' = ''
 'balena-etcher' = ''
 'Chia Blockchain' = ''
 'Steam' = ''
