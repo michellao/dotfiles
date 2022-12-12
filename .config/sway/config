@@ -239,8 +239,15 @@ bindsym $mod+r mode "resize"
 # Alt-Tab
 bindsym $mod+Tab exec $p/sway-select-window
 
+# Idle
+exec swayidle -w \
+	timeout 900 'swaylock -f -c 000000' \
+	timeout 1200 'swaymsg "output * dpms off"' \
+		resume 'swaymsg "output * dpms on"' \
+	before-sleep 'swaylock -f -c 000000'
+
 # Screenshot
-bindsym Print exec grim ~/Pictures
+bindsym Print exec grim
 # Selection screenshot
 bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 
