@@ -130,7 +130,7 @@ rehash_precmd() {
 
 add-zsh-hook -Uz precmd rehash_precmd
 
-if [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
+if [[ "$(hostname)" == "nanashi-hvywxx9" ]] && [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 	exec sway
 fi
 
