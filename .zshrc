@@ -135,6 +135,6 @@ if [[ "$(cat /etc/hostname)" == "nanashi-hvywxx9" ]] && [ -z $DISPLAY ] && [ "$(
 fi
 
 # if tmux is executable, X is running, and not inside a tmux session, then try to attach
-if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ] && [[ "${TERM}" == "xterm-kitty" ]]; then
-	tmux attach || tmux > /dev/null 2>&1
-fi
+#if [ -x "$(command -v tmux)" ] && [ -z "${TMUX}" ] && [[ "${TERM}" == "xterm-kitty" ]]; then
+#	tmux attach || tmux > /dev/null 2>&1
+#fi
