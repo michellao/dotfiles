@@ -1,6 +1,6 @@
 [general]
-grab-keyboard=true
-grab-mouse=true
+grab-keyboard=false
+grab-mouse=false
 scaling=true
 auto-clipboard=true
 sync-modifiers=true
