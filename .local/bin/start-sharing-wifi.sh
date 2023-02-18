@@ -9,13 +9,13 @@ function isRoot() {
 
 function nftRule() {
 	echo "Nftables update"
-	nft add rule inet filter input udp dport { 5353, 67 } accept
-	nft add rule inet filter forward iif "enp3s0f4u1" ip daddr 192.168.12.0/24 accept
-	nft add rule inet filter forward iif "ap0" ip saddr 192.168.12.0/24 accept
+	nft add rule inet filter udp_chain udp dport { 5353, 67 } accept
+	nft add rule inet filter my_forward iif "enp3s0f4u1" ip daddr 192.168.12.0/24 accept
+	nft add rule inet filter my_forward iif "ap0" ip saddr 192.168.12.0/24 accept
 	read -rp "Which use wg0 ? " answer
 	case "$answer" in
 		[Yy])
-			nft add rule inet filter forward iif "wg0" ip daddr 192.168.12.0/24 accept
+			nft add rule inet filter my_forward iif "wg0" ip daddr 192.168.12.0/24 accept
 			;;
 	esac
 	touch /tmp/nftRule
