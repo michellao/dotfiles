@@ -33,6 +33,12 @@ if [[ "$TERM" == (Eterm*|alacritty*|aterm*|gnome*|konsole*|kterm*|putty*|rxvt*|s
 	add-zsh-hook -Uz preexec xterm_title_preexec
 fi
 
+if test -n "$KITTY_INSTALLATION_DIR"; then
+	export KITTY_SHELL_INSTALLATION=enabled
+	autoload -Uz -- "$KITTY_INSTALLATION_DIR"/shell-integration/zsh/kitty-integration
+	kitty-integration
+	unfunction kitty-integration
+fi
 
 PROMPT='%F{green}%n%f@%F{red}%M%f %B%F{blue}%~%f%b %F{yellow}${vcs_info_msg_0_}%f %# '
 RPROMPT='[%F{#0000ff}%?%f]'
@@ -132,6 +138,10 @@ add-zsh-hook -Uz precmd rehash_precmd
 
 if [[ "$(cat /etc/hostname)" == "nanashi-hvywxx9" ]] && [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 	exec sway
+fi
+
+if [[ "$(cat /etc/hostname)" == "pcserver" ]]; then
+	umask 077
 fi
 
 # if tmux is executable, X is running, and not inside a tmux session, then try to attach
