@@ -24,5 +24,6 @@
     },
     "update.mode": "none",
     "cmake.configureOnOpen": false,
-    "liveServer.settings.donotShowInfoMsg": true
+    "liveServer.settings.donotShowInfoMsg": true,
+    "terminal.integrated.enableMultiLinePasteWarning": false
 }
