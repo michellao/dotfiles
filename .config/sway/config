@@ -84,6 +84,10 @@ input type:touchpad {
 	scroll_method two_finger
 }
 
+input "type:pointer" {
+	accel_profile flat
+}
+
 
 ### Key bindings
 #
@@ -282,7 +286,7 @@ for_window [app_id="spicy"] move window to workspace number 6
 for_window [app_id="qalculate-qt"] floating enable
 for_window [class="jetbrains-idea-ce"] floating enable
 for_window [title="About Mozilla Firefox"] floating enable
-for_window [title="^Open*"] floating enable
+for_window [title="^Open (File|Folder)"] floating enable
 for_window [app_id="mpv"] floating enable
 for_window [app_id="imv"] floating enable
 
