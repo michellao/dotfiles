@@ -8,15 +8,14 @@ bindkey -v
 autoload -Uz compinit
 compinit
 
-
 autoload -Uz add-zsh-hook
 
-# git
-autoload -Uz vcs_info
-setopt prompt_subst
-precmd_vcs_info() { vcs_info }
-precmd_functions+=( precmd_vcs_info )
-
+# Git
+if [[ "$(cat /etc/hostname)" == "nanashi-hvywxx9" ]]; then
+	source /usr/share/git/completion/git-prompt.sh
+elif [[ "$(cat /etc/hostname)" == "pcserver" ]]; then
+	source /etc/bash_completion.d/git-prompt
+fi
 
 function xterm_title_precmd () {
 	print -Pn '\e]2;%n@%M %~\a'
@@ -40,14 +39,9 @@ if test -n "$KITTY_INSTALLATION_DIR"; then
 	unfunction kitty-integration
 fi
 
-PROMPT='%F{green}%n%f@%F{red}%M%f %B%F{blue}%~%f%b %F{yellow}${vcs_info_msg_0_}%f %# '
+setopt PROMPT_SUBST ;
+PROMPT='%F{green}%n%f@%F{red}%M%f %B%F{blue}%~%f%b %F{yellow}$(__git_ps1 "(%s) ")%f%# '
 RPROMPT='[%F{#0000ff}%?%f]'
-
-# git info
-zstyle ':vcs_info:*' check-for-changes true
-zstyle ':vcs_info:*' unstagedstr ' *'
-zstyle ':vcs_info:*' stagedstr ' +'
-zstyle ':vcs_info:git:*' formats '(%b)'
 
 # menu completion
 zstyle ':completion:*' menu select
