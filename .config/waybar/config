@@ -96,11 +96,14 @@
         "format-icons": ["", ""]
     },
     "battery": {
+		"bat": "BAT0",
+		"adapter": "ACAD",
         "states": {
             // "good": 95,
             "warning": 30,
             "critical": 15
         },
+		"interval": 5,
         "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
@@ -109,9 +112,6 @@
         // "format-full": "",
         "format-icons": ["", "", "", "", ""]
     },
-//    "battery#bat2": {
-//        "bat": "BAT2"
-//    },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
