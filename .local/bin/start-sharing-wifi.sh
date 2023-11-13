@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 function isRoot() {
 	if [ "${EUID}" -ne 0 ]; then
@@ -12,13 +12,21 @@ function nftRule() {
 	nft add rule inet filter udp_chain udp dport { 5353, 67 } accept
 	nft add rule inet filter forward iif "enp3s0f4u1" ip daddr 192.168.12.0/24 accept
 	nft add rule inet filter forward iif "ap0" ip saddr 192.168.12.0/24 accept
-	read -rp "Which use wg0 ? " answer
-	case "$answer" in
-		[Yy])
-			nft add rule inet filter forward iif "wg0" ip daddr 192.168.12.0/24 accept
-			;;
-	esac
 	touch /tmp/nftRule
+}
+
+function wireguardActive {
+	existWireGuard = "$(ip l | grep wg0)"
+	if [ -n $existWireGuard ]; then
+		nft add rule inet filter forward iif "wg0" ip daddr 192.168.12.0/24 accept
+	fi
+}
+
+function nftRuleAfterLaunch() {
+	if [ -e /tmp/nftRule ]; then
+		nft add rule inet filter forward iif "ap0" ip saddr 192.168.12.0/24 accept
+		nft add rule inet filter forward iif "enp3s0f4u1" oif "ap0" accept
+	fi
 }
 
 function createAP {
@@ -26,6 +34,8 @@ function createAP {
 	sleep 3
 	if [ ! -e /tmp/nftRule ]; then
 		nftRule
+	else
+		nftRuleAfterLaunch
 	fi
 	create_ap_PID=$(ls /tmp | grep -E "create_ap.[0-9]+.lock" | cut -d . -f 2)
 	echo "Create Wi-Fi ${create_ap_PID}"
