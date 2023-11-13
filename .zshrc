@@ -131,7 +131,7 @@ rehash_precmd() {
 add-zsh-hook -Uz precmd rehash_precmd
 
 if [[ "$(cat /etc/hostname)" == "nanashi-hvywxx9" ]] && [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
-	exec sway
+	exec sway > /tmp/sway.log
 fi
 
 if [[ "$(cat /etc/hostname)" == "pcserver" ]]; then
