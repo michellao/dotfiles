@@ -27,9 +27,6 @@ set $browser firefox
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #set $menu --no-startup-id wofi --show=drun
 
-# Environments set
-exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP sway
-
 #xwayland disable
 
 ### Output configuration
@@ -82,6 +79,7 @@ input type:touchpad {
 	middle_emulation disabled
 	natural_scroll enabled
 	scroll_method two_finger
+#	dwt disable
 }
 
 input "type:pointer" {
@@ -261,6 +259,9 @@ bindsym Print exec grim
 bindsym Shift+Print exec grim -g "$(slurp)" - | wl-copy
 # Recording a selection of the screen
 bindsym $mod+Shift+r exec $p/wf-recorder-launch
+# Lock screen
+bindsym $mod+m exec swaylock -f -c 000000
+
 
 # Clipboard manager
 #exec wl-paste -t text --watch clipman store --no-persist
@@ -268,6 +269,8 @@ bindsym $mod+Shift+r exec $p/wf-recorder-launch
 #bindsym $mod+c exec clipman pick -t wofi
 #bindsym $mod+q exec clipman clear -t wofi -T"-c /home/nanashi/.config/wofi/config_clipboard"
 #bindsym $mod+q exec clipman clear -t wofi
+
+default_border none
 
 #
 # Status Bar:
@@ -285,9 +288,14 @@ for_window [app_id="qemu"] move window to workspace number 6
 for_window [app_id="spicy"] move window to workspace number 6
 for_window [app_id="qalculate-qt"] floating enable
 for_window [class="jetbrains-idea-ce"] floating enable
+for_window [class="jetbrains-idea"] floating enable
 for_window [title="About Mozilla Firefox"] floating enable
 for_window [title="^Open (File|Folder)"] floating enable
 for_window [app_id="mpv"] floating enable
 for_window [app_id="imv"] floating enable
+for_window [app_id="thunderbird"] floating enable
+for_window [window_type="popup_menu"] floating enable
+for_window [window_type="notification"] floating enable
+for_window [app_id="localsend"] floating enable
 
 include /etc/sway/config.d/*
