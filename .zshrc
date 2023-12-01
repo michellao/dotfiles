@@ -10,10 +10,13 @@ compinit
 
 autoload -Uz add-zsh-hook
 
+hostname="$(cat /etc/hostname)"
+
 # Git
-if [[ "$(cat /etc/hostname)" == "nanashi-hvywxx9" ]]; then
+if [[ $hostname == "nanashi-hvywxx9" || $hostname == "nanashi-desktop" ]] ; then
 	source /usr/share/git/completion/git-prompt.sh
-elif [[ "$(cat /etc/hostname)" == "pcserver" ]]; then
+elif [[ $hostname == "pcserver" ]]; then
+	umask 077
 	source /etc/bash_completion.d/git-prompt
 fi
 
@@ -132,10 +135,6 @@ add-zsh-hook -Uz precmd rehash_precmd
 
 if [[ "$(cat /etc/hostname)" == "nanashi-hvywxx9" ]] && [ -z $DISPLAY ] && [ "$(tty)" = "/dev/tty1" ]; then
 	exec sway > /tmp/sway.log
-fi
-
-if [[ "$(cat /etc/hostname)" == "pcserver" ]]; then
-	umask 077
 fi
 
 # if tmux is executable, X is running, and not inside a tmux session, then try to attach
