@@ -9,21 +9,22 @@
     "C_Cpp.default.compilerPath": "/usr/bin/g++",
     "editor.bracketPairColorization.enabled": true,
     "workbench.colorCustomizations": {
-        /*"editorBracketHighlight.foreground1": "#f1c32c",
-        "editorBracketHighlight.foreground2": "#ff8b5dce",
-        "editorBracketHighlight.foreground3": "#2be42b",
-        "editorBracketHighlight.foreground4": "#7b7a81",
-        "editorBracketHighlight.foreground5": "#784af7",
-        "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000"*/
-        "editorBracketHighlight.foreground1": "#52B2F7",
-        "editorBracketHighlight.foreground2": "#fe20dd",
+        "editorBracketHighlight.foreground1": "#8aceff",
+        "editorBracketHighlight.foreground2": "#c32be4",
         "editorBracketHighlight.foreground3": "#FF297A",
         "editorBracketHighlight.foreground4": "#3FE086",
-        "editorBracketHighlight.foreground5": "#C3F846",
+        "editorBracketHighlight.foreground5": "#daf846",
         "editorBracketHighlight.unexpectedBracket.foreground": "#8256ef"
     },
     "update.mode": "none",
     "cmake.configureOnOpen": false,
     "liveServer.settings.donotShowInfoMsg": true,
-    "terminal.integrated.enableMultiLinePasteWarning": false
+    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "window.titleBarStyle": "custom",
+    "omnisharp.useModernNet": false,
+    "idf.openOcdConfigs": [
+        "interface/ftdi/esp32_devkitj_v1.cfg",
+        "target/esp32.cfg"
+    ],
+    "idf.adapterTargetName": "esp32"
 }
