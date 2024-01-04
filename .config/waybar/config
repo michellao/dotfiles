@@ -76,7 +76,7 @@
 		"format-alt": "{:%d-%m-%Y}"
     },
     "cpu": {
-        "format": "{usage}%  @ {avg_frequency} GHz",
+        "format": "{usage}% @ {avg_frequency} GHz  ",
         "tooltip": false
     },
     "memory": {
