@@ -79,7 +79,7 @@ input type:touchpad {
 	middle_emulation disabled
 	natural_scroll enabled
 	scroll_method two_finger
-#	dwt disable
+	dwt disabled
 }
 
 input "type:pointer" {
@@ -179,8 +179,8 @@ input "type:pointer" {
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
-	bindgesture --exact swipe:3:left workspace prev
-	bindgesture --exact swipe:3:right workspace next
+	bindgesture --exact swipe:3:left workspace prev_on_output
+	bindgesture --exact swipe:3:right workspace next_on_output
 #
 # Layout stuff:
 #
