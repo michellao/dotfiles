@@ -116,6 +116,10 @@ key[Control-Right]="${terminfo[kRIT5]}"
 [[ -n "${key[Control-Left]}"  ]] && bindkey -- "${key[Control-Left]}"  backward-word
 [[ -n "${key[Control-Right]}" ]] && bindkey -- "${key[Control-Right]}" forward-word
 
+key[Control-Backward]="^H"
+
+[[ -n "${key[Control-Backward]}" ]] && bindkey -- "${key[Control-Backward]}" backward-delete-word
+
 
 zshcache_time="$(date +%s%N)"
 
