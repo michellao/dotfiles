@@ -10,22 +10,22 @@ function isRoot() {
 function nftRule() {
 	echo "Nftables update"
 	nft add rule inet filter udp_chain udp dport { 5353, 67 } accept
-	nft add rule inet filter forward iif "enp3s0f4u1" ip daddr 192.168.12.0/24 accept
-	nft add rule inet filter forward iif "ap0" ip saddr 192.168.12.0/24 accept
+	nft add rule inet filter forward iif "enp3s0f4u1" oif "ap0" accept
+	nft add rule inet filter forward iif "ap0" accept
 	touch /tmp/nftRule
 }
 
 function wireguardActive {
-	existWireGuard = "$(ip l | grep wg0)"
-	if [ -n $existWireGuard ]; then
-		nft add rule inet filter forward iif "wg0" ip daddr 192.168.12.0/24 accept
+	existWireGuard="$(ip l | grep wg0)"
+	if [ -n "$existWireGuard" ]; then
+		nft add rule inet filter forward iif "wg0" oif "ap0" accept
 	fi
 }
 
 function nftRuleAfterLaunch() {
 	if [ -e /tmp/nftRule ]; then
-		nft add rule inet filter forward iif "ap0" ip saddr 192.168.12.0/24 accept
 		nft add rule inet filter forward iif "enp3s0f4u1" oif "ap0" accept
+		nft add rule inet filter forward iif "ap0" accept
 	fi
 }
 
@@ -37,6 +37,7 @@ function createAP {
 	else
 		nftRuleAfterLaunch
 	fi
+	wireguardActive
 	create_ap_PID=$(ls /tmp | grep -E "create_ap.[0-9]+.lock" | cut -d . -f 2)
 	echo "Create Wi-Fi ${create_ap_PID}"
 }

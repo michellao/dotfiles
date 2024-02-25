@@ -1,12 +1,11 @@
 {
     "telemetry.telemetryLevel": "off",
-    "editor.fontFamily": "'FreeMono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'FreeMono', 'Droid Sans Mono', 'monospace', 'Droid Sans Fallback'",
     "workbench.enableExperiments": false,
     "C_Cpp.default.intelliSenseMode": "linux-gcc-x64",
     "extensions.ignoreRecommendations": true,
     "C_Cpp.default.cppStandard": "c++17",
     "C_Cpp.default.cStandard": "c17",
-    "C_Cpp.default.compilerPath": "/usr/bin/g++",
     "editor.bracketPairColorization.enabled": true,
     "workbench.colorCustomizations": {
         "editorBracketHighlight.foreground1": "#8aceff",
@@ -17,8 +16,6 @@
         "editorBracketHighlight.unexpectedBracket.foreground": "#8256ef"
     },
     "update.mode": "none",
-    "cmake.configureOnOpen": false,
-    "liveServer.settings.donotShowInfoMsg": true,
     "terminal.integrated.enableMultiLinePasteWarning": false,
     "omnisharp.useModernNet": false,
     "idf.openOcdConfigs": [
@@ -28,5 +25,17 @@
     "idf.adapterTargetName": "esp32",
     "thunder-client.httpVersion": "HTTP/2",
     "thunder-client.indentSize": 4,
-    "thunder-client.responseLimit": 5
+    "thunder-client.responseLimit": 5,
+    "github.copilot.enable": {
+        "*": true,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false,
+        "properties": false,
+        "jsonc": false
+    },
+    "terminal.integrated.scrollback": 10000,
+    "terminal.integrated.fontFamily": "monospace",
+    "window.customTitleBarVisibility": "auto",
+    "window.titleBarStyle": "custom"
 }
