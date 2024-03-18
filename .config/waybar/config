@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "sway/mode"],
     //"modules-center": ["sway/window"],
-    "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
+    "modules-right": ["wireplumber", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
      //Modules configuration
      "sway/workspaces": {
          "disable-scroll": true,
@@ -77,7 +77,7 @@
     },
     "cpu": {
         "format": "{usage}% @ {avg_frequency} GHz  ",
-        "tooltip": false
+        "tooltip": true
     },
     "memory": {
         "format": "{used:0.01f} GiB / {total:0.1f} GiB "
@@ -143,7 +143,8 @@
 	"wireplumber": {
 		"format": "{volume}% {icon}",
 		"format-muted": "",
-		"format-icons": ["", "", ""]
+		"format-icons": ["", "", ""],
+		"on-click": "helvum"
 	}
 }
 
