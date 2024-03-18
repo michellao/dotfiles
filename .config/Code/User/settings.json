@@ -37,5 +37,6 @@
     "terminal.integrated.scrollback": 10000,
     "terminal.integrated.fontFamily": "monospace",
     "window.customTitleBarVisibility": "auto",
-    "window.titleBarStyle": "custom"
+    "window.titleBarStyle": "custom",
+    "editor.stickyScroll.enabled": false
 }
