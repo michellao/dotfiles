@@ -16,24 +16,12 @@
         "editorBracketHighlight.unexpectedBracket.foreground": "#8256ef"
     },
     "update.mode": "none",
-    "terminal.integrated.enableMultiLinePasteWarning": false,
-    "omnisharp.useModernNet": false,
-    "idf.openOcdConfigs": [
-        "interface/ftdi/esp32_devkitj_v1.cfg",
-        "target/esp32.cfg"
-    ],
-    "idf.adapterTargetName": "esp32",
+    "terminal.integrated.enableMultiLinePasteWarning": "never",
+    "remote.autoForwardPorts": false,
+    "remote.SSH.useExecServer": false,
     "thunder-client.httpVersion": "HTTP/2",
     "thunder-client.indentSize": 4,
     "thunder-client.responseLimit": 5,
-    "github.copilot.enable": {
-        "*": true,
-        "plaintext": false,
-        "markdown": false,
-        "scminput": false,
-        "properties": false,
-        "jsonc": false
-    },
     "terminal.integrated.scrollback": 10000,
     "terminal.integrated.fontFamily": "monospace",
     "window.customTitleBarVisibility": "auto",
