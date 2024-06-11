@@ -10,7 +10,6 @@ function isRoot() {
 function nftRule() {
 	echo "Nftables update"
 	nft add rule inet filter udp_chain udp dport { 5353, 67 } accept
-	nft add rule inet filter forward iif "enp3s0f4u1" oif "ap0" accept
 	nft add rule inet filter forward iif "ap0" accept
 	touch /tmp/nftRule
 }
@@ -19,12 +18,13 @@ function wireguardActive {
 	existWireGuard="$(ip l | grep wg0)"
 	if [ -n "$existWireGuard" ]; then
 		nft add rule inet filter forward iif "wg0" oif "ap0" accept
+	else
+		nft add rule inet filter forward iif "enp3s0f4u1" oif "ap0" accept
 	fi
 }
 
 function nftRuleAfterLaunch() {
 	if [ -e /tmp/nftRule ]; then
-		nft add rule inet filter forward iif "enp3s0f4u1" oif "ap0" accept
 		nft add rule inet filter forward iif "ap0" accept
 	fi
 }
