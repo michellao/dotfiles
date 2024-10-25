@@ -42,6 +42,7 @@ set $browser firefox
 
 # Main screen at home
 output 'AOC 24G1WG4 0x00008002' mode 1920x1080@144Hz
+output 'Samsung Electric Company SAMSUNG 0x01000E00' mode 1920x1080@60Hz
 
 ### Idle configuration
 #
