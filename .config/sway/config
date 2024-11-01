@@ -293,6 +293,7 @@ for_window [app_id="spicy"] move window to workspace number 6
 for_window [app_id="qalculate-qt"] floating enable
 for_window [class="jetbrains-idea-ce"] floating enable
 for_window [class="jetbrains-idea"] floating enable
+for_window [class="Pinentry-gtk"] floating enable
 for_window [title="About Mozilla Firefox"] floating enable
 for_window [title="^Open (File|Folder)"] floating enable
 for_window [app_id="mpv"] floating enable
