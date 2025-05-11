@@ -87,6 +87,10 @@ input "type:pointer" {
 	accel_profile flat
 }
 
+input "0:0:wlr_virtual_pointer_v1" {
+	accel_profile flat
+	natural_scroll disabled
+}
 
 ### Key bindings
 #
@@ -249,9 +253,9 @@ bindsym $mod+Tab exec $p/sway-select-window
 
 # Idle
 exec swayidle -w \
-	timeout 600 'swaymsg "output * power off"' \
+	timeout 1200 'swaymsg "output * power off"' \
 		resume 'swaymsg "output * power on"' \
-	timeout 900 'swaylock -f -c 000000' \
+	timeout 1500 'swaylock -f -c 000000' \
 	before-sleep 'swaylock -f -c 000000'
 
 # Screenshot
@@ -275,6 +279,7 @@ bindsym $mod+m exec swaylock -f -c 000000
 exec gammastep
 
 default_border none
+default_floating_border normal
 
 #
 # Status Bar:
