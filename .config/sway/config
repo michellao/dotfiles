@@ -81,6 +81,7 @@ input type:touchpad {
 	natural_scroll enabled
 	scroll_method two_finger
 	dwt disabled
+	drag_lock enabled
 }
 
 input "type:pointer" {
@@ -257,6 +258,9 @@ exec swayidle -w \
 		resume 'swaymsg "output * power on"' \
 	timeout 1500 'swaylock -f -c 000000' \
 	before-sleep 'swaylock -f -c 000000'
+
+# Dock
+exec_always nwg-dock -d -nows -nolauncher
 
 # Screenshot
 bindsym Print exec grim

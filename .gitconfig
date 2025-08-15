@@ -1,7 +1,7 @@
 [user]
 	name = Michel LAO
 	email = SansNom01@proton.me
-	signingkey = C6E3B5884F804158
+	signingkey = 1649CDFFB42C492A
 [commit]
 	gpgsign = true
 [init]
